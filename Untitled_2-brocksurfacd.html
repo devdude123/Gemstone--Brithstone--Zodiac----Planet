@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+Thank you for being awesome, and caring. Not many people do the 'view source code' option, Nor the inspect element option. I really hope that this code is easy to read, and makes you interested in coding/programming as well.
+Sincerely,
+Brock :)
+ -->
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>Untitled 1</title>
+        <link rel="stylesheet" href="jquery-ui-1.11.2.custom/jquery-uii.css" type="text/css" media="all" /><!--<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.11/themes/redmond/jquery-ui.css" type="text/css" media="all" />-->
+        <script src="jquery-ui-1.11.2.custom/external/jquery/jquery.js" type="text/javascript"></script>
+<!--        <script src="https://onedrive.live.com/download?resid=355AD9373FE995C!1815&authkey=!AMSv7Kco5R8AAj8&ithint=file%2cjs" type="text/javascript"></script>
+-->     <script src="jquery-ui-1.11.2.custom/jquery-ui.min.js" type="text/javascript"></script>
+<!--<script src="https://onedrive.live.com/download?resid=355AD9373FE995C!1805&authkey=!AJiPM11DniPPOAU&ithint=file%2cjs" type="text/javascript"></script>
+--><!--     <link rel="stylesheet" type="text/css" media="all" href="../jquery-ui-1.11.2.custom smoothness/jquery-ui-1.11.2.custom/jquery-ui.css" />
+-->     <style>
+              .group { zoom: 1 }
+/*            .superaligny {
+    margin-right:150px;
+    margin-left:150px;
+}
+*//*.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  -webkit-perspective: 12rem;
+  -moz-perspective: 12rem;
+  -ms-perspective: 12rem;
+  -o-perspective: 12rem;
+  perspective: 12rem;
+
+  z-index: 2000;
+  position: fixed;
+  height: 6rem;
+  width: 6rem;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.pace.pace-inactive .pace-progress {
+  display: none;
+}
+
+.pace .pace-progress {
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 6rem;
+  width: 6rem !important;
+  line-height: 6rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: rgba(53, 205, 41, 0.8);
+  color: #fff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  text-align: center;
+
+  -webkit-animation: pace-3d-spinner linear infinite 2s;
+  -moz-animation: pace-3d-spinner linear infinite 2s;
+  -ms-animation: pace-3d-spinner linear infinite 2s;
+  -o-animation: pace-3d-spinner linear infinite 2s;
+  animation: pace-3d-spinner linear infinite 2s;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.pace .pace-progress:after {
+  content: attr(data-progress-text);
+  display: block;
+}
+
+@-webkit-keyframes pace-3d-spinner {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+
+@-moz-keyframes pace-3d-spinner {
+  from {
+    -moz-transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(360deg);
+  }
+}
+
+@-ms-keyframes pace-3d-spinner {
+  from {
+    -ms-transform: rotateY(0deg);
+  }
+  to {
+    -ms-transform: rotateY(360deg);
+  }
+}
+
+@-o-keyframes pace-3d-spinner {
+  from {
+    -o-transform: rotateY(0deg);
+  }
+  to {
+    -o-transform: rotateY(360deg);
+  }
+}
+
+@keyframes pace-3d-spinner {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+*/  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+
+  #sortable li { margin: 0 5px 5px 5px; padding: 8px; font-size: 1.2em; height: 2.5em; }
+
+  html>body #sortable li { height: 2.5em; line-height: 2.2em; }
+
+  .ui-state-highlight { height: 5.5em; line-height: 5.2em; }
+
+    .pace.pace-inactive {
+  display: none;
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  z-index: 2000;
+  position: fixed;
+  height: 60px;
+  width: 100px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.pace .pace-progress {
+  z-index: 2000;
+  position: absolute;
+  height: 60px;
+  width: 100px !important;
+}
+
+.pace .pace-progress:before {
+  content: attr(data-progress-text);
+  text-align: center;
+  color: #fff;
+  background: #35cd29;
+  border-radius: 50%;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 1;
+  padding: 20% 0 7px;
+  width: 50%;
+  height: 40%;
+  margin: 10px 0 0 30px;
+  display: block;
+  z-index: 999;
+  position: absolute;
+}
+
+.pace .pace-progress:after {
+  border-radius: 50%;
+  border: 5px solid #35cd29;
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100px;
+
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-animation: spin-3 2s linear infinite;
+     -moz-animation: spin-3 2s linear infinite;
+       -o-animation: spin-3 2s linear infinite;
+          animation: spin-3 2s linear infinite;
+}
+
+.pace .pace-activity {
+  font-size: 15px;
+  line-height: 1;
+  z-index: 2000;
+  position: absolute;
+  height: 60px;
+  width: 100px;
+
+  display: block;
+}
+
+.pace .pace-activity:before {
+  border-radius: 50%;
+  border: 5px solid #35cd29;
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100px;
+
+  -webkit-animation: spin-1 2s linear infinite;
+     -moz-animation: spin-1 2s linear infinite;
+       -o-animation: spin-1 2s linear infinite;
+          animation: spin-1 2s linear infinite;
+}
+
+.pace .pace-activity:after{
+  border-radius: 50%;
+  border: 5px solid #35cd29;
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100px;
+
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-animation: spin-2 2s linear infinite;
+     -moz-animation: spin-2 2s linear infinite;
+       -o-animation: spin-2 2s linear infinite;
+          animation: spin-2 2s linear infinite;
+}
+
+@-webkit-keyframes spin-1 {
+  0%  { -webkit-transform: rotate(0deg); }
+  100%{ -webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes spin-1 {
+  0%  { -moz-transform: rotate(0deg); }
+  100%{ -moz-transform: rotate(359deg);}
+}
+@-o-keyframes spin-1 {
+  0%  { -o-transform: rotate(0deg); }
+  100%{ -o-transform: rotate(359deg);}
+}
+@keyframes spin-1 {
+  0%  { transform: rotate(0deg); }
+  100%{ transform: rotate(359deg);}
+}
+
+@-webkit-keyframes spin-2 {
+  0%  { -webkit-transform: rotate(59.8deg); }
+  100%{ -webkit-transform: rotate(418.8deg);}
+}
+@-moz-keyframes spin-2 {
+  0%  { -moz-transform: rotate(59.8deg); }
+  100%{ -moz-transform: rotate(418.8deg);}
+}
+@-o-keyframes spin-2 {
+  0%  { -o-transform: rotate(59.8deg); }
+  100%{ -o-transform: rotate(418.8deg);}
+}
+@keyframes spin-2 {
+  0%  { transform: rotate(59.8deg); }
+  100%{ transform: rotate(418.8deg);}
+}
+
+@-webkit-keyframes spin-3 {
+  0%  { -webkit-transform: rotate(119.6deg); }
+  100%{ -webkit-transform: rotate(478.6deg);}
+}
+@-moz-keyframes spin-3 {
+  0%  { -moz-transform: rotate(119.6deg); }
+  100%{ -moz-transform: rotate(478.6deg);}
+}
+@-o-keyframes spin-3 {
+  0%  { -o-transform: rotate(119.6deg); }
+  100%{ -o-transform: rotate(478.6deg);}
+}
+@keyframes spin-3 {
+  0%  { transform: rotate(119.6deg); }
+  100%{ transform: rotate(478.6deg);}
+}   </style>
+
+<script type="text/javascript">(function(){var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W=[].slice,X={}.hasOwnProperty,Y=function(a,b){function c(){this.constructor=a}for(var d in b)X.call(b,d)&&(a[d]=b[d]);return c.prototype=b.prototype,a.prototype=new c,a.__super__=b.prototype,a},Z=[].indexOf||function(a){for(var b=0,c=this.length;c>b;b++)if(b in this&&this[b]===a)return b;return-1};for(t={catchupTime:500,initialRate:.03,minTime:500,ghostTime:500,maxProgressPerFrame:10,easeFactor:1.25,startOnPageLoad:!0,restartOnPushState:!0,restartOnRequestAfter:500,target:"body",elements:{checkInterval:100,selectors:["body"]},eventLag:{minSamples:10,sampleCount:3,lagThreshold:3},ajax:{trackMethods:["GET"],trackWebSockets:!0,ignoreURLs:[]}},B=function(){var a;return null!=(a="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance.now():void 0)?a:+new Date},D=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,s=window.cancelAnimationFrame||window.mozCancelAnimationFrame,null==D&&(D=function(a){return setTimeout(a,50)},s=function(a){return clearTimeout(a)}),F=function(a){var b,c;return b=B(),(c=function(){var d;return d=B()-b,d>=33?(b=B(),a(d,function(){return D(c)})):setTimeout(c,33-d)})()},E=function(){var a,b,c;return c=arguments[0],b=arguments[1],a=3<=arguments.length?W.call(arguments,2):[],"function"==typeof c[b]?c[b].apply(c,a):c[b]},u=function(){var a,b,c,d,e,f,g;for(b=arguments[0],d=2<=arguments.length?W.call(arguments,1):[],f=0,g=d.length;g>f;f++)if(c=d[f])for(a in c)X.call(c,a)&&(e=c[a],null!=b[a]&&"object"==typeof b[a]&&null!=e&&"object"==typeof e?u(b[a],e):b[a]=e);return b},p=function(a){var b,c,d,e,f;for(c=b=0,e=0,f=a.length;f>e;e++)d=a[e],c+=Math.abs(d),b++;return c/b},w=function(a,b){var c,d,e;if(null==a&&(a="options"),null==b&&(b=!0),e=document.querySelector("[data-pace-"+a+"]")){if(c=e.getAttribute("data-pace-"+a),!b)return c;try{return JSON.parse(c)}catch(f){return d=f,"undefined"!=typeof console&&null!==console?console.error("Error parsing inline pace options",d):void 0}}},g=function(){function a(){}return a.prototype.on=function(a,b,c,d){var e;return null==d&&(d=!1),null==this.bindings&&(this.bindings={}),null==(e=this.bindings)[a]&&(e[a]=[]),this.bindings[a].push({handler:b,ctx:c,once:d})},a.prototype.once=function(a,b,c){return this.on(a,b,c,!0)},a.prototype.off=function(a,b){var c,d,e;if(null!=(null!=(d=this.bindings)?d[a]:void 0)){if(null==b)return delete this.bindings[a];for(c=0,e=[];c<this.bindings[a].length;)e.push(this.bindings[a][c].handler===b?this.bindings[a].splice(c,1):c++);return e}},a.prototype.trigger=function(){var a,b,c,d,e,f,g,h,i;if(c=arguments[0],a=2<=arguments.length?W.call(arguments,1):[],null!=(g=this.bindings)?g[c]:void 0){for(e=0,i=[];e<this.bindings[c].length;)h=this.bindings[c][e],d=h.handler,b=h.ctx,f=h.once,d.apply(null!=b?b:this,a),i.push(f?this.bindings[c].splice(e,1):e++);return i}},a}(),null==window.Pace&&(window.Pace={}),u(Pace,g.prototype),C=Pace.options=u({},t,window.paceOptions,w()),T=["ajax","document","eventLag","elements"],P=0,R=T.length;R>P;P++)J=T[P],C[J]===!0&&(C[J]=t[J]);i=function(a){function b(){return U=b.__super__.constructor.apply(this,arguments)}return Y(b,a),b}(Error),b=function(){function a(){this.progress=0}return a.prototype.getElement=function(){var a;if(null==this.el){if(a=document.querySelector(C.target),!a)throw new i;this.el=document.createElement("div"),this.el.className="pace pace-active",document.body.className=document.body.className.replace(/pace-done/g,""),document.body.className+=" pace-running",this.el.innerHTML='<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>',null!=a.firstChild?a.insertBefore(this.el,a.firstChild):a.appendChild(this.el)}return this.el},a.prototype.finish=function(){var a;return a=this.getElement(),a.className=a.className.replace("pace-active",""),a.className+=" pace-inactive",document.body.className=document.body.className.replace("pace-running",""),document.body.className+=" pace-done"},a.prototype.update=function(a){return this.progress=a,this.render()},a.prototype.destroy=function(){try{this.getElement().parentNode.removeChild(this.getElement())}catch(a){i=a}return this.el=void 0},a.prototype.render=function(){var a,b;return null==document.querySelector(C.target)?!1:(a=this.getElement(),a.children[0].style.width=""+this.progress+"%",(!this.lastRenderedProgress||this.lastRenderedProgress|0!==this.progress|0)&&(a.children[0].setAttribute("data-progress-text",""+(0|this.progress)+"%"),this.progress>=100?b="99":(b=this.progress<10?"0":"",b+=0|this.progress),a.children[0].setAttribute("data-progress",""+b)),this.lastRenderedProgress=this.progress)},a.prototype.done=function(){return this.progress>=100},a}(),h=function(){function a(){this.bindings={}}return a.prototype.trigger=function(a,b){var c,d,e,f,g;if(null!=this.bindings[a]){for(f=this.bindings[a],g=[],d=0,e=f.length;e>d;d++)c=f[d],g.push(c.call(this,b));return g}},a.prototype.on=function(a,b){var c;return null==(c=this.bindings)[a]&&(c[a]=[]),this.bindings[a].push(b)},a}(),O=window.XMLHttpRequest,N=window.XDomainRequest,M=window.WebSocket,v=function(a,b){var c,d,e,f;f=[];for(d in b.prototype)try{e=b.prototype[d],f.push(null==a[d]&&"function"!=typeof e?a[d]=e:void 0)}catch(g){c=g}return f},z=[],Pace.ignore=function(){var a,b,c;return b=arguments[0],a=2<=arguments.length?W.call(arguments,1):[],z.unshift("ignore"),c=b.apply(null,a),z.shift(),c},Pace.track=function(){var a,b,c;return b=arguments[0],a=2<=arguments.length?W.call(arguments,1):[],z.unshift("track"),c=b.apply(null,a),z.shift(),c},I=function(a){var b;if(null==a&&(a="GET"),"track"===z[0])return"force";if(!z.length&&C.ajax){if("socket"===a&&C.ajax.trackWebSockets)return!0;if(b=a.toUpperCase(),Z.call(C.ajax.trackMethods,b)>=0)return!0}return!1},j=function(a){function b(){var a,c=this;b.__super__.constructor.apply(this,arguments),a=function(a){var b;return b=a.open,a.open=function(d,e){return I(d)&&c.trigger("request",{type:d,url:e,request:a}),b.apply(a,arguments)}},window.XMLHttpRequest=function(b){var c;return c=new O(b),a(c),c};try{v(window.XMLHttpRequest,O)}catch(d){}if(null!=N){window.XDomainRequest=function(){var b;return b=new N,a(b),b};try{v(window.XDomainRequest,N)}catch(d){}}if(null!=M&&C.ajax.trackWebSockets){window.WebSocket=function(a,b){var d;return d=null!=b?new M(a,b):new M(a),I("socket")&&c.trigger("request",{type:"socket",url:a,protocols:b,request:d}),d};try{v(window.WebSocket,M)}catch(d){}}}return Y(b,a),b}(h),Q=null,x=function(){return null==Q&&(Q=new j),Q},H=function(a){var b,c,d,e;for(e=C.ajax.ignoreURLs,c=0,d=e.length;d>c;c++)if(b=e[c],"string"==typeof b){if(-1!==a.indexOf(b))return!0}else if(b.test(a))return!0;return!1},x().on("request",function(b){var c,d,e,f,g;return f=b.type,e=b.request,g=b.url,H(g)?void 0:Pace.running||C.restartOnRequestAfter===!1&&"force"!==I(f)?void 0:(d=arguments,c=C.restartOnRequestAfter||0,"boolean"==typeof c&&(c=0),setTimeout(function(){var b,c,g,h,i,j;if(b="socket"===f?e.readyState<2:0<(h=e.readyState)&&4>h){for(Pace.restart(),i=Pace.sources,j=[],c=0,g=i.length;g>c;c++){if(J=i[c],J instanceof a){J.watch.apply(J,d);break}j.push(void 0)}return j}},c))}),a=function(){function a(){var a=this;this.elements=[],x().on("request",function(){return a.watch.apply(a,arguments)})}return a.prototype.watch=function(a){var b,c,d,e;return d=a.type,b=a.request,e=a.url,H(e)?void 0:(c="socket"===d?new m(b):new n(b),this.elements.push(c))},a}(),n=function(){function a(a){var b,c,d,e,f,g,h=this;if(this.progress=0,null!=window.ProgressEvent)for(c=null,a.addEventListener("progress",function(a){return h.progress=a.lengthComputable?100*a.loaded/a.total:h.progress+(100-h.progress)/2}),g=["load","abort","timeout","error"],d=0,e=g.length;e>d;d++)b=g[d],a.addEventListener(b,function(){return h.progress=100});else f=a.onreadystatechange,a.onreadystatechange=function(){var b;return 0===(b=a.readyState)||4===b?h.progress=100:3===a.readyState&&(h.progress=50),"function"==typeof f?f.apply(null,arguments):void 0}}return a}(),m=function(){function a(a){var b,c,d,e,f=this;for(this.progress=0,e=["error","open"],c=0,d=e.length;d>c;c++)b=e[c],a.addEventListener(b,function(){return f.progress=100})}return a}(),d=function(){function a(a){var b,c,d,f;for(null==a&&(a={}),this.elements=[],null==a.selectors&&(a.selectors=[]),f=a.selectors,c=0,d=f.length;d>c;c++)b=f[c],this.elements.push(new e(b))}return a}(),e=function(){function a(a){this.selector=a,this.progress=0,this.check()}return a.prototype.check=function(){var a=this;return document.querySelector(this.selector)?this.done():setTimeout(function(){return a.check()},C.elements.checkInterval)},a.prototype.done=function(){return this.progress=100},a}(),c=function(){function a(){var a,b,c=this;this.progress=null!=(b=this.states[document.readyState])?b:100,a=document.onreadystatechange,document.onreadystatechange=function(){return null!=c.states[document.readyState]&&(c.progress=c.states[document.readyState]),"function"==typeof a?a.apply(null,arguments):void 0}}return a.prototype.states={loading:0,interactive:50,complete:100},a}(),f=function(){function a(){var a,b,c,d,e,f=this;this.progress=0,a=0,e=[],d=0,c=B(),b=setInterval(function(){var g;return g=B()-c-50,c=B(),e.push(g),e.length>C.eventLag.sampleCount&&e.shift(),a=p(e),++d>=C.eventLag.minSamples&&a<C.eventLag.lagThreshold?(f.progress=100,clearInterval(b)):f.progress=100*(3/(a+3))},50)}return a}(),l=function(){function a(a){this.source=a,this.last=this.sinceLastUpdate=0,this.rate=C.initialRate,this.catchup=0,this.progress=this.lastProgress=0,null!=this.source&&(this.progress=E(this.source,"progress"))}return a.prototype.tick=function(a,b){var c;return null==b&&(b=E(this.source,"progress")),b>=100&&(this.done=!0),b===this.last?this.sinceLastUpdate+=a:(this.sinceLastUpdate&&(this.rate=(b-this.last)/this.sinceLastUpdate),this.catchup=(b-this.progress)/C.catchupTime,this.sinceLastUpdate=0,this.last=b),b>this.progress&&(this.progress+=this.catchup*a),c=1-Math.pow(this.progress/100,C.easeFactor),this.progress+=c*this.rate*a,this.progress=Math.min(this.lastProgress+C.maxProgressPerFrame,this.progress),this.progress=Math.max(0,this.progress),this.progress=Math.min(100,this.progress),this.lastProgress=this.progress,this.progress},a}(),K=null,G=null,q=null,L=null,o=null,r=null,Pace.running=!1,y=function(){return C.restartOnPushState?Pace.restart():void 0},null!=window.history.pushState&&(S=window.history.pushState,window.history.pushState=function(){return y(),S.apply(window.history,arguments)}),null!=window.history.replaceState&&(V=window.history.replaceState,window.history.replaceState=function(){return y(),V.apply(window.history,arguments)}),k={ajax:a,elements:d,document:c,eventLag:f},(A=function(){var a,c,d,e,f,g,h,i;for(Pace.sources=K=[],g=["ajax","elements","document","eventLag"],c=0,e=g.length;e>c;c++)a=g[c],C[a]!==!1&&K.push(new k[a](C[a]));for(i=null!=(h=C.extraSources)?h:[],d=0,f=i.length;f>d;d++)J=i[d],K.push(new J(C));return Pace.bar=q=new b,G=[],L=new l})(),Pace.stop=function(){return Pace.trigger("stop"),Pace.running=!1,q.destroy(),r=!0,null!=o&&("function"==typeof s&&s(o),o=null),A()},Pace.restart=function(){return Pace.trigger("restart"),Pace.stop(),Pace.start()},Pace.go=function(){var a;return Pace.running=!0,q.render(),a=B(),r=!1,o=F(function(b,c){var d,e,f,g,h,i,j,k,m,n,o,p,s,t,u,v;for(k=100-q.progress,e=o=0,f=!0,i=p=0,t=K.length;t>p;i=++p)for(J=K[i],n=null!=G[i]?G[i]:G[i]=[],h=null!=(v=J.elements)?v:[J],j=s=0,u=h.length;u>s;j=++s)g=h[j],m=null!=n[j]?n[j]:n[j]=new l(g),f&=m.done,m.done||(e++,o+=m.tick(b));return d=o/e,q.update(L.tick(b,d)),q.done()||f||r?(q.update(100),Pace.trigger("done"),setTimeout(function(){return q.finish(),Pace.running=!1,Pace.trigger("hide")},Math.max(C.ghostTime,Math.max(C.minTime-(B()-a),0)))):c()})},Pace.start=function(a){u(C,a),Pace.running=!0;try{q.render()}catch(b){i=b}return document.querySelector(".pace")?(Pace.trigger("start"),Pace.go()):setTimeout(Pace.start,50)},"function"==typeof define&&define.amd?define(function(){return Pace}):"object"==typeof exports?module.exports=Pace:C.startOnPageLoad&&Pace.start()}).call(this);
+
+</script>
+
+
+        
+        <script>
+            $(function() {
+            
+              $( "#accordion" )
+            
+                .accordion({
+                collapsible: true,
+            
+                  header: "> div > h3",
+                  heightStyle: "content"
+            
+                })
+            
+                .sortable({
+            
+                  axis: "y, x, z",
+                        placeholder: "ui-state-highlight",
+            
+            
+            
+                  handle: "h3",
+            
+                  stop: function( event, ui ) {
+            
+                    // IE doesn't register the blur when sorting
+            
+                    // so trigger focusout handlers to remove .ui-state-focus
+            
+                    ui.item.children( "h3" ).triggerHandler( "focusout" );
+            
+            
+            
+                    // Refresh accordion to handle new order
+            
+                    $( this ).accordion( "refresh" );
+            
+                  }
+            
+                });
+            
+            });
+
+
+              $(function() {
+
+    $( "input[type=submit], a, button" )
+
+      .button()
+
+      .click(function( event ) {
+
+        event.preventDefault();
+
+      });
+
+  });
+
+    
+        </script>       <script>
+            $(function() {
+            
+              $( "#sortable" ).sortable ({
+            
+                placeholder: "ui-state-highlight"
+            
+              });
+            
+            
+            
+              $( "#sortable" ).disableSelection();
+            
+            });
+            
+        </script>     <style>
+
+    fieldset {
+
+      border: 0;
+
+    }
+
+    label {
+
+      display: block;
+
+      margin: 30px 0 0 0;
+
+    }
+
+    select {
+
+      width: 200px;
+
+    }
+
+    .overflow {
+
+      height: 200px;
+
+    }
+
+  </style>
+    
+        <script>
+            function userGemstone() {
+                var list1 = document.getElementById("month2");
+                var message = "Your Gemstone is: ";
+                var label = document.getElementById("gemstone");
+                switch (list1.options[list1.selectedIndex].text) {
+                    case "Please select a month":
+                        label.innerText = "Please select a month from the dropdown list above";
+                        break;
+                    case "January":
+                        label.innerText = message + "Garnet";
+                        break;
+                    case "February":
+                        label.innerText = message + "Amethyst";
+                        break;
+                    case 'March':
+                        label.innerText = message + "Aquamarine";
+                        break;
+                    case 'April':
+                        label.innerText = message + 'Diamond';
+                        break;
+                    case 'May':
+                        label.innerText = message + "Emerald";
+                        break;
+                    case 'June':
+                        label.innerText = message + "Pearl";
+                        break;
+                    case 'July':
+                        label.innerText = message + 'Ruby';
+                        break;
+                    case 'August':
+                        label.innerText = message + 'Peridot';
+                        break;
+                    case "September":
+                        label.innerText = message + 'Sapphire';
+                        break;
+                    case 'October':
+                        label.innerText = message + 'Opal';
+                        break;
+                    case 'November':
+                        label.innerText = message + 'Topaz';
+                        break;
+                    case 'December':
+                        label.innerText = message + "Turquoise";
+                        break;
+                }
+            }</script>
+            <script>
+                    function bestScript() {
+            
+                var dropdownDate = document.getElementById("date")
+                var dropdownMonth = document.getElementById("month")
+                var sign = document.getElementById("sign")
+                var message1 = "Your Zodiac Sign is:";
+                var message2 = "Please Select A Day";
+                var smiley = " :) ;) :] ;] :} ;} ";//Amazing :)
+                var ch = ".  Your Characteristics Are: ";
+                var bull = ch + "Security, Subtle strength, Appreciation, Instruction, Patience";
+                var twin = ch + "Communication, Indecision, Inquisitive, Intelligent, Changeable";
+                var aqua = ch + "Knowledge, Humanitarian, Serious, Insightful, Duplicitous";
+                var fish = ch + "Fluctuation, Depth, Imagination, Reactive, Indecisive";
+                var standUpTo = ch + "Emotion, Diplomatic, Intensity, Impulsive, Selective";
+                var Lion = ch + "Ruling, Warmth, Generosity, Faithful, Initiative";
+                var dancer = ch + "Analyzing, Practical, Reflective, Observation, Thoughtful";
+                var scaleGoodvsBad = ch + "Balance, Justice, Truth, Beauty, Perfection";
+                var scorpion = ch + "Transient, Self-Willed, Purposeful, Unyielding";
+                var goat = ch + "Determination, Dominance, Perservering, Practical, Willful";
+                var archer = ch + "Philosophical, Motion, Experimentation, Optimism";
+                if (dropdownMonth.selectedIndex == 1 && dropdownDate.selectedIndex <= 19) {
+                    sign.value = message1 + " ♑CAPRICORN" + goat;
+                }
+                if (dropdownMonth.selectedIndex == 1 && dropdownDate.selectedIndex >= 20) { sign.value = message1 + " ♒AQUARIUS" + aqua; }
+                if (dropdownMonth.selectedIndex == 2 && dropdownDate.selectedIndex <= 18) { sign.value = message1 + " ♒AQUARIUS" + aqua; }
+                if (dropdownMonth.selectedIndex == 2 && dropdownDate.selectedIndex >= 19) { sign.value = message1 + " ♓PISCES" + fish; }
+                if (dropdownMonth.selectedIndex == 3 && dropdownDate.selectedIndex <= 20) { sign.value = message1 + " ♓PISCES" + fish + smiley; }
+            
+                if (dropdownMonth.selectedIndex == 3 && dropdownDate.selectedIndex >= 21) { sign.value = message1 + " ♈ARIES" + ch + "Active, Demanding, Determined, Effective, Ambitious"; }
+                if (dropdownMonth.selectedIndex == 4 && dropdownDate.selectedIndex <= 19) { sign.value = message1 + " ♈ARIES" + ch + "Active, Demanding, Determined, Effective, Ambitious"; }
+                if (dropdownMonth.selectedIndex == 4 && dropdownDate.selectedIndex >= 20) { sign.value = message1 + " ♉TAURUS" + bull; }
+                if (dropdownMonth.selectedIndex == 5 && dropdownDate.selectedIndex <= 20) { sign.value = message1 + " ♉TAURUS" + bull; }
+                if (dropdownMonth.selectedIndex == 5 && dropdownDate.selectedIndex >= 21) { sign.value = message1 + " ♊GEMINI" + twin; }
+                if (dropdownMonth.selectedIndex == 6 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " ♊GEMINI" + twin; }
+                if (dropdownMonth.selectedIndex == 6 && dropdownDate.selectedIndex >= 21) { sign.value = message1 + " ♋CANCER" + standUpTo; }
+                if (dropdownMonth.selectedIndex == 7 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " ♋CANCER" + standUpTo; }
+                if (dropdownMonth.selectedIndex == 7 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " ♌LEO" + Lion; }
+                if (dropdownMonth.selectedIndex == 8 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " ♌LEO"; + Lion + smiley; }
+                if (dropdownMonth.selectedIndex == 8 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " ♍VIRGO" + dancer; }
+                if (dropdownMonth.selectedIndex == 9 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " ♍VIRGO" + dancer; }
+                if (dropdownMonth.selectedIndex == 9 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " ♎LIBRA" + scaleGoodvsBad; }
+                if (dropdownMonth.selectedIndex == 10 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " ♎LIBRA" + scaleGoodvsBad; }
+                if (dropdownMonth.selectedIndex == 10 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " ♏SCORPIO" + scorpion; }
+                if (dropdownMonth.selectedIndex == 11 && dropdownDate.selectedIndex <= 21) { sign.value = message1 + " ♏SCORPIO" + scorpion; }
+                if (dropdownMonth.selectedIndex == 11 && dropdownDate.selectedIndex >= 22) { sign.value = message1 + " ♐SAGITTARIUS" + archer; }
+                if (dropdownMonth.selectedIndex == 12 && dropdownDate.selectedIndex <= 21) { sign.value = message1 + " ♐SAGITTARIUS" + archer; }
+                if (dropdownMonth.selectedIndex == 12 && dropdownDate.selectedIndex >= 22) { sign.value = message1 + " ♑CAPRICORN" + goat; }
+            }
+            
+            function addDays() {
+                var list = document.getElementById("month");
+                var div = document.getElementById("daysList");
+                var dateList = document.getElementById("date");
+                var days = 0;
+                switch (list.options[list.selectedIndex].text) {
+                    case "January":
+                    case "March":
+                    case "May":
+                    case "July":
+                    case "August":
+                    case "October":
+                    case "December":
+                        days = 31;
+                        break;
+                    case "February":
+                        days = 29;
+                        break;
+                    case "April":
+                    case "June":
+                    case "September":
+                    case "November":
+                        days = 30;
+                        break;
+                }
+                if (dateList.length > 0) {
+                    for (var i = dateList.length; i >= dateList.length; i--) {
+                        dateList.remove(dateList.length - 1[i]);
+            
+            
+                    }
+            
+                }
+                for (var i = 1; i <= days; i++) {
+                    var li = document.createElement('option');
+                    dateList.appendChild(li);
+                    li.appendChild(document.createTextNode(i));
+                }
+                div.style.display = "inline";
+            }</script>  
+<script>
+            function userGemstone() {
+                var list1 = document.getElementById("month2");
+                var message = "Your Gemstone is: ";
+                var label = document.getElementById("gemstone");
+                switch (list1.options[list1.selectedIndex].text) {
+                    case "Please select a month":
+                        label.innerText = "Please select a month from the dropdown list above";
+                        break;
+                    case "January":
+                        label.innerText = message + "Garnet";
+                        break;
+                    case "February":
+                        label.innerText = message + "Amethyst";
+                        break;
+                    case 'March':
+                        label.innerText = message + "Aquamarine";
+                        break;
+                    case 'April':
+                        label.innerText = message + 'Diamond';
+                        break;
+                    case 'May':
+                        label.innerText = message + "Emerald";
+                        break;
+                    case 'June':
+                        label.innerText = message + "Pearl &/or Alexandrite";
+                        break;
+                    case 'July':
+                        label.innerText = message + 'Ruby';
+                        break;
+                    case 'August':
+                        label.innerText = message + 'Peridot';
+                        break;
+                    case "September":
+                        label.innerText = message + 'Sapphire';
+                        break;
+                    case 'October':
+                        label.innerText = message + 'Opal &/or Tourmaline';
+                        break;
+                    case 'November':
+                        label.innerText = message + 'Topaz &/or Citrine';
+                        break;
+                    case 'December':
+                        label.innerText = message + "Turquoise, &/or Zercon, &/or Tanzanite";
+                        break;
+                }
+            }   
+
+
+        </script>
+ <style>
+
+/*.hm {
+    width:73.48;
+    
+}
+*/.bigFont {
+    font-size:36pt;
+}
+
+.ui-state-default1 {
+     background-color: #feba00;
+     background: #feba00;
+ }
+ .common-text {
+    font:50px Verdana;
+    }
+    .problem {
+    border:18px #FF0066 dotted;
+}
+.sl {
+    color:green;
+    font-weight:bold;
+}
+.sln {
+    color:green;
+    
+}
+.prb {
+    color:red;
+}
+.li {
+        margin: 5px 0 20px 0;
+    padding: 0 0 0 1px;
+    list-style-position: inside;
+    font-family:Consolas; 
+
+}
+/*background-color:rgba(203, 86, 153, 1);*/
+  </style>
+
+
+
+                    <script>   $(function() {  
+                         $( "#lion" ).click(function() {
+
+   $( "#leo" ).toggle("bounce");
+
+    });    $("#goat").click(function() {
+    $("#capricorn").toggle("blind");
+    });
+
+    $("#scorpion").click(function() {
+    $("#scorpio").toggle("clip");
+    });
+    $("#bull").click(function() {
+    $("#taurus").toggle("drop");
+    });
+    $("#archer").click(function() {
+    $("#saggitarius").toggle("explode");
+    });
+    $("#crab").click(function() {
+    $("#cancer").toggle("fold");
+    });
+    $("#dancer").click(function() {
+    $("#virgo").toggle("highlight");
+    });
+    $("#scale").click(function() {
+    $("#libra").toggle("puff");
+    });
+    $("#aqua").click(function() {
+    $("#aquarius").toggle("pulslate");
+    });
+        $("#fish").click(function() {
+    $("#pisces").toggle("scale");
+    });
+    $("#twin").click(function() {
+    $("#gemini").toggle("shake");
+    });    $("#ram").click(function() {
+    $("#aries").toggle("size");
+    });
+    $("#zodiacs").click(function () {
+    $("#zodiacsigns").toggle("slide");
+    });
+
+
+});
+ 
+
+
+</script>
+<!--<style>background-image: url("http://scache.microsoft.com/Surface/Assets/img/support/accorplus.png");</style>
+--><!-- http://jqueryui.com/resources/demos/style.css --><style>
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.feature-form, .focus-areas, .secondary-areas, .related-page, .related-jewelerSearch {
+    background: #f1efef;
+    border: 2px solid #afc6b2;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.focus-areas {
+    color: #76977a;
+}
+/* @media screen and (min-width:64em) */
+.focus-areas {
+    float: left;
+    display: block;
+    margin-right: 1.16%;
+    width: 49.41%;
+    min-height: 290px;
+}
+.focus-areas#birthstones {
+    float: left;
+    display: block;
+    margin-right: 1.16%;
+    width: 100%;
+}
+#content .copy, #content #content-inside {
+    padding: 10px;
+    text-shadow: 1px 1px 1px #f1efef;
+}
+/* @media screen and (min-width:64em) */
+#content .copy, #content #content-inside {
+    float: left;
+    display: block;
+    margin-right: 1.16%;
+    width: 45.2%;
+    padding: 20px 20px 40px;
+}
+/* @media screen and (min-width:64em) */
+#content :last-child.copy, #content :last-child#content-inside {
+    margin-right: 0px;
+}
+/* @media screen and (min-width:64em) */
+#content .no-right#content-inside {
+    float: left;
+    display: block;
+    margin-right: 1.16%;
+    width: 70.49%;
+    padding: 20px 0 40px 20px;
+}
+/* @media screen and (min-width:64em) */
+#content :last-child.no-right#content-inside {
+    margin-right: 0px;
+}
+.bar {
+    *zoom:1: ;
+}
+/* @media screen and (min-width:40em) */
+.bar {
+    margin: 0 auto;
+    max-width: 40em;
+}
+/* @media screen and (min-width:64em) */
+.bar {
+    margin: 0 auto;
+    max-width: 62.5em;
+    position: relative;
+}
+.bar::before, .bar::after {
+    content: " ";
+    display: table;
+}
+.bar::after {
+    clear: both;
+}
+#content {
+    padding: 10px;
+}
+/* @media screen and (min-width:64em) */
+#content {
+    background: url("/img/bg-content.png") center repeat-y;
+    padding: 0 0 40px 0;
+}
+body {
+    color: #333;
+    font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+    font-size: 1em;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8em;
+}
+html {
+    background: #fff;
+}
+html, body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+dl {
+    line-height: 1.8em;
+    margin-bottom: 0.9em;
+}
+#birthstones dl {
+    float: left;
+    display: block;
+    margin-right: 1.16%;
+    width: 49.41%;
+    background: #fff;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-height: 180px;
+    text-align: center;
+}
+/* @media screen and (min-width:40em) */
+#birthstones dl {
+    float: left;
+    display: block;
+    margin-right: 1.16%;
+    width: 24.12%;
+}
+/* @media screen and (min-width:64em) */
+#birthstones dl {
+    float: left;
+    display: block;
+    margin-right: 1.16%;
+    width: 15.69%;
+}
+#birthstones dl:nth-child(2n+1) {
+    clear: left;
+}
+/* @media screen and (min-width:40em) */
+#birthstones dl:nth-child(2n+1) {
+    clear: none;
+}
+/* @media screen and (min-width:40em) */
+#birthstones dl:nth-child(4n+1) {
+    clear: left;
+}
+/* @media screen and (min-width:64em) */
+#birthstones dl:nth-child(4n+1) {
+    clear: none;
+}
+/* @media screen and (min-width:64em) */
+#birthstones dl:nth-child(6n+1) {
+    clear: left;
+}
+#birthstones dl:last-child {
+    margin-right: 0px;
+}
+#birthstones dl:nth-child(2n) {
+    margin-right: 0px;
+}
+/* @media screen and (min-width:40em) */
+#birthstones dl:last-child {
+    margin-right: 0px;
+}
+/* @media screen and (min-width:40em) */
+#birthstones dl:nth-child(2n) {
+    margin-right: 1.16%;
+}
+/* @media screen and (min-width:40em) */
+#birthstones dl:nth-child(4n) {
+    margin-right: 0px;
+}
+/* @media screen and (min-width:64em) */
+#birthstones dl:last-child {
+    margin-right: 0px;
+}
+/* @media screen and (min-width:64em) */
+#birthstones dl:nth-child(4n) {
+    margin-right: 1.16%;
+}
+/* @media screen and (min-width:64em) */
+#birthstones dl:nth-child(6n) {
+    margin-right: 0px;
+}
+dl dt {
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 0.9em;
+}
+#birthstones dt {
+    font-size: 1.1em;
+    padding: 0;
+    text-decoration: uppercase;
+}
+dl dd {
+    margin: 0;
+}
+#birthstones dd {
+    line-height: 1.5;
+    padding: 0;
+    font-size: 0.9em;
+}
+a {
+    color: #517355;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#birthstones a:link, #birthstones a:visited {
+    background: url('bg-birthstones.jpg') no-repeat center 0;
+    display: block;
+    padding: 60px 0 0;
+    font-weight: bold;
+}
+#birthstones .dec a {
+    background-position: center -1100px;
+}
+#birthstones .nov a {
+    background-position: center -1000px;
+}
+#birthstones .oct a {
+    background-position: center -900px;
+}
+#birthstones .sep a {
+    background-position: center -800px;
+}
+#birthstones .aug a {
+    background-position: center -700px;
+}
+#birthstones .jul a {
+    background-position: center -600px;
+}
+#birthstones .jun a {
+    background-position: center -500px;
+}
+#birthstones .may a {
+    background-position: center -400px;
+}
+#birthstones .apr a {
+    background-position: center -300px;
+}
+#birthstones .mar a {
+    background-position: center -200px;
+}
+#birthstones .feb a {
+    background-position: center -100px;
+}
+#birthstones .jan a {
+    background-position: center 0;
+}
+#content .copy a:link, #content .copy a:visited, #content #content-inside a:link, #content #content-inside a:visited {
+    color: #517355;
+    text-decoration: underline;
+}
+#birthstones a:link {
+    
+}
+</style>    </head>
+    <body onload="//confirm('This is for Pop Soc, who\n I love so much.');alert('Thank you for visiting this page,\n I really appreciate it!\n I have spent so much effort and time, as well as a lot of hard work on this web page/web app.\n I hope you like this wep page. And I hope you think that this \n wepage/web app is clean enough to use and understand.\n Also, If you could, use the \'view source\' option, &/or the \'inspect element\' option, by right clicking\n on the page, and selecting those options.\n remember to click on the \n credits tab, and rate this page please.\n  \n Thanks again. \n Sincerely, \n Brock');">
+    <script>  $(function() {
+
+    var icons = {
+
+      header: "ui-icon-plus",
+
+      activeHeader: "ui-icon-minusthick"
+
+    };
+
+    $( "#accordion" ).accordion({
+
+      icons: icons
+
+    });
+
+
+  });
+
+</script>
+<noscript>
+    <!-- 
+Thank you for being awesome, and caring. Not many people do the 'view source code' option, Nor the inspect element option. I really hope that this code is easy to read, and makes you interested in coding/programming as well.
+Sincerely,
+Brock :)
+ -->
+<div class="problem">
+<h1 class="common-text">Please enable the "Active-X" content, thank you.</h1>
+&lt;div&nbsp;id="page"&gt;
+&lt;div&nbsp;id="body"&gt;
+&lt;div&nbsp;class="content"&nbsp;id="content"&gt;
+&lt;div&nbsp;class="topic"&gt;
+&lt;div&nbsp;id="mainSection"&gt;
+&lt;ul&nbsp;class="li"&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681381(v=vs.85).aspx"&gt;main&nbsp;page&lt;&#47;a&gt;
+&lt;a&nbsp;href="http:&#47;&#47;technet.microsoft.com&#47;en-us&#47;library&#47;cc720473(v=ws.10).aspx"&gt;main&nbsp;page2&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681382(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(0-499)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681388(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(500-999)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681383(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(1000-1299)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681385(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(1300-1699)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681386(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(1700-3999)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681387(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(4000-5999)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681389(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(6000-8199)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681390(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(8200-8999)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681391(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(9000-11999)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;li&nbsp;class="li"&gt;
+&lt;a&nbsp;href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;windows&#47;desktop&#47;ms681384(v=vs.85).aspx"&gt;System&nbsp;Error&nbsp;Codes&nbsp;(12000-15999)&lt;&#47;a&gt;
+&lt;&#47;li&gt;
+&lt;&#47;ul&gt;
+
+&lt;&#47;div&gt;
+&lt;&#47;div&gt;
+&lt;&#47;div&gt;
+&lt;&#47;div&gt;
+&lt;&#47;div&gt;
+
+
+</div>
+<br />
+<hr />
+<br />
+<br />
+<hr />
+<br />
+<br />
+<hr />
+<br />
+<br />
+<hr />
+<br />
+<br />
+<hr />
+<br />
+<br />
+
+</noscript>
+<!-- 
+Thank you for being awesome, and caring. Not many people do the 'view source code' option, Nor the inspect element option. I really hope that this code is easy to read, and makes you interested in coding/programming as well.
+Sincerely,
+Brock :)
+ -->
+    <!--blue: #00a0f0. yellow: #feba00. red/orange (orangered): #f55314. green: #7cba00.-->
+              <script>
+/*
+  $(function() {
+  $("#date" )
+        .selectmenu()
+
+      .selectmenu( "menuWidget" )
+
+        .addClass( "overflow" );
+
+
+  $("#month2").selectmenu();
+
+  });
+*/
+  </script>
+        <!--background-color:rgba(7, 105, 172, 1);background-color:rgba(177, 73, 38, 1);-->
+        <h5 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:18px;"><!--<em><u><strong><code><var><dfn><samp><kbd>-->Quick Info: Tabs are sortable, &amp; collapsible, accordian sections are sortable, and collapsible, The following buttons on the Birthstone and Zodiac signs tag are toggleable: All buttons in Step 2b in the accordian, &amp; all buttons in step 2a in the accordian.<!--</kbd></samp></dfn></var></code></strong></u></em>--></h5>
+        <div class="tab-container">
+        <div id="tabs">
+            <ul><!--style="color:rgba(233, 0, 90, 1)"-->
+                <li><a href="#tabs-1" >Zodiac, Planets, and Birthstones</a></li>
+                <li><a href="#tabs-2">Credits</a></li>
+            </ul>
+            <div id="tabs-1">
+            
+                <div class="ac-container">
+                    <!-- Note: you will need the correct script and css references in the <head> -->
+                    <div id="accordion">
+                        <div class="group">
+                            <h3>                            
+                            <a href="#" style="color:#feba00">Quick View | Step: 1</a>
+</h3>
+                            <div>
+                            <a class="bigFont" style="color:green/* hsla(201, 100%, 39%, 1) */">But what do these mean??? Read about it in Step 2 :)</a>
+
+                                <p style="font:20px Verdana;">
+                                    Planet Symbols:&nbsp;<br />
+                                    &#9791;<br />
+                                    &#9792;<br />
+                                    &#9793;/&oplus;<br />
+                                    &#9794;<br />
+                                    &#9795;<br />
+                                    &#9796;<br />
+                                    &#9797;<br />
+                                    &#9798;<br />
+                                    &#9799;<br />
+                                </p>
+                                                            <p style="font:20px Verdana;">
+                                Zodiac Symbols:&nbsp;<br />
+                                &#9800;<br />
+                                &#9801;<br />         
+                                &#9802;<br />
+                                &#9803;<br />
+                                &#9804;<br />
+                                &#9805;<br />
+                                &#9806;<br />
+                                &#9807;<br />
+                                &#9808;<br />
+                                &#9809;<br />
+                                &#9810;<br />
+                                &#9811;<br />
+                            </p>
+
+                                <!--ending div containing symbols-->
+                            </div>
+                            <!-- ending div containing the first section group of accordion -->
+                        </div>
+                        <div class="group">
+    
+                            <h3 style="color:rgba(0, 160, 240, 1)"><a href="#" style="color:rgba(0, 160, 240, 1)">Read about it - Zodiac Sign's/Symbol's | Step 2</a></h3>
+                            <div>
+                            <small>Get info buttons are toggleable</small><br /><a>Zodiac Signs</a><button id="zodiacs">Get Info</button><p id="zodiacsigns" hidden="hidden"><a href="http://en.wikipedia.org/wiki/Zodiac" target="_blank" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Click here for Zodiac Info</a></p><br />
+                            <a>♑ Capricorn - December 23 - January 20</a><button id="goat">Get info</button><p id="capricorn" hidden="hidden">Capricorn's are also philosophical signs and are highly intelligent too. They apply their knowledge to practical matters, and strive to maintain stability and order. They are good organizers, and they achieve their goals by purposeful, systematic means. They are very intuitive, although they don't share this trait with others freely. They do not deal well with opposition or criticism but a healthy Capricorn will often shrug off negative comments towards their character. They are patient and persevering - they know they can accomplish any task as long as they follow a their plan step-by-step. Capricorn's have broad shoulders, and typically take on other's problems with aplomb. Ironically, they rarely share their own problems and tend to go through bouts of inner gloom after a spell of dwelling on these problems. </p><br />
+                            <a>♒ Aquarius - January 21 - February 19</a><button id="aqua">Get info</button><p id="aquarius" hidden="hidden">Often simple and unassuming, the Aquarian goes about accomplishing goals in a quiet, often unorthodox ways. Although their methods may be unorthodox, the results for achievement are surprisingly effective. Aquarian's will take up any cause, and are humanitarians of the zodiac. They are honest, loyal and highly intelligent. They are also easy going and make natural friendships. If not kept in check, the Aquarian can be prone to sloth and laziness. However, they know this about themselves, and try their best to motivate themselves to action. They are also prone to philosophical thoughts, and are often quite artistic and poetic.</p><br />
+                            <a>♓ Pisces - February 20- March 20
+                            </a><button id="fish">Get info</button><p id="pisces" hidden="hidden">Also unassuming, the Pisces zodiac signs and meanings deal with acquiring vast amounts of knowledge, but you would never know it. They keep an extremely low profile compared to others in the zodiac. They are honest, unselfish, trustworthy and often have quiet dispositions. They can be overcautious and sometimes gullible. These qualities can cause the Pisces to be taken advantage of, which is unfortunate as this sign is beautifully gentle, and generous. In the end, however, the Pisces is often the victor of ill circumstance because of his/her intense determination. They become passionately devoted to a cause - particularly if they are championing for friends or family. </p>
+<br />
+                            <a>♈ Aries - March 21 - April 20</a><button id="ram">Get info</button><p id="aries" hidden="hidden">Aries people are creative, adaptive, and insightful. They can also be strong-willed and spontaneous (sometimes to a fault). Aries people can be driven and are very ambitious often making them over-achievers in anything they set their mind to tackle. Aries are fire signs, and so too is their personality. They may be quick to anger, but don't take it personally, it's just their fiery, passionate personalities showing through. Aries signs have excellent sense of humor, and they get along with almost everyone at the party (and they DO know how to party). Aries can be impatient, but we love them anyway because they are devoted friends, lovers and family members - they are loyal to then end and will fight for their causes (usually supporting the underdog). </p><br />
+                            <a>♉ Taurus - April 21 - May 21</a><button id="bull">Get Info</button><p id="taurus" hidden="hidden">Taurus zodiac signs and meanings, like the animal that represents them, is all about strength, stamina and will. Stubborn by nature, the Taurus will stand his/her ground to the bitter end (sometimes even irrationally so). But that's okay because the Taurus is also a loving, sympathetic and appreciative sign. The Taurus is very understanding and when we need someone to unburden ourselves to, we often share our deepest fears with the Taurians of the zodiac. Taurians are very patient, practical and efficient, they are excellent in matters of business and are also wonderful instructors/teachers. Although initially they may have their own best interest at heart, they are ultimately &amp; endlessly generous with their time, possessions and love. 
+ 
+</p><br />
+                            <a>♊ Gemini - May 22 - June 21</a><button id="twin">Get info</button><p id="gemini" hidden="hidden">Flexibility, balance and adaptability are the keywords for the Gemini. They are quick to grasp the meaning of a situation and act on it, often with positive effects. They tend to have a duality to their nature, and can sometimes be tough to predict how they will react. They can turn from hot to cold and may be prone to noticeable mood swings. However, they are generous signs with tendencies of being affectionate, and imaginative. They also inspire others easily as they seem to naturally motivate themselves - their charisma and accomplishments are infectious. Geminians are very supportive, and are especially good at promotions, sales, and driving hard bargains. </p><br />
+                            <a>♋ Cancer - June 22 - July 22</a><button id="crab">Get info</button><p id="cancer" hidden="hidden">Cancerians love home-life, family and domestic settings. They are traditionalists, and enjoy operating on a fundamental level. They love history, and are fascinated with the beginnings of things (heraldry, ancestry, etc.). The moon is their ruler, so they can be a bit of a contradiction and sometimes moody. However, they are conservative, so they'll be apt to hide their moods from others altogether. They have a reputation for being fickle, but they'll tell you that isn't true, and it's not. Cancerians make loyal, sympathetic friends. However Cancerians need alone time, and when they retreat, let them do so on their terms. </p><br />
+                            <a>♌ Leo - July 23 -August 21</a><button id="lion">Get info</button><p id="leo" hidden="hidden">The zodiac signs and meanings of Leo is about expanse, power and exuberance. Leo's are natural born leaders, and they will let you know it as they have a tendency to be high-minded and vocal about their opinions. That's okay, because if you observe, the Leo is usually correct in his/her statements. Leo's have a savvy way of analyzing a situation and executing swift judgment with a beneficial outcome. It comes from being a leader. They are brave, intuitive, and also head-strong and willful. Beneath their dynamic persona lies a generous, loving, sensitive nature that they do not easily share with others. They might be a bit bossy, but those who know them understand this comes from a source need to do good, not (usually) from an inflated ego.</p><br />
+                            <a>♍ Virgo - August 22 - September 23</a><button id="dancer">Get info</button><p id="virgo" hidden="hidden">Virgo's have keen minds, and are delightful to talk with, often convincing others of outlandish tales with ease and charm. Virgo's are inquisitive and are very skilled at drawing information from people. This trait also makes them naturally intuitive. Combine this with their remarkable memories, and we see an advanced, analytical personality. However the Virgo needs balance in their lives otherwise they may become short-tempered, impatient and self-serving. Virgo's are excellent teammates in work and social activities. They work well with others, although they freely express their opinions (even when unwarranted). </p><br />
+                            <a>♎ Libra - September 24 - October 23</a><button id="scale">Get info</button><p id="libra" hidden="hidden">As their zodiac signs and meanings would indicate, Libra's are all about balance, justice, equanimity and stability. They easily surround themselves with harmony and beauty, but sometimes go to extremes to do so if their goals are unreasonable or unhealthy. With Venus as their ruling planet, Libra's are very understanding, caring, and often the champion of underdogs. They have keen intuitions, but often don't give themselves enough credit for their perceptions. They can be quiet and shy if not persuaded to come out of their shell. Ironically and in spite of their introverted nature they make excellent debaters, often proving a point from out of seemingly nowhere. </p><br />
+                            <a>♏ Scorpio - October 24 - November 22</a><button id="scorpion">Get info</button><p id="scorpio" hidden="hidden">The Scorpio is often misunderstood. These personalities are bold and are capable of executing massive enterprises with cool control and confidence. They can surmount seemingly all obstacles when they put their mind to the task, and they have unshakable focus when the situation calls for it. Regardless of their bold nature, they are often secretive, but they are always observing behind their withdrawn manner. Being associated with a solar animal, (the scorpion) they are not withdrawn for long, and when they come out again they do so with force, vigor and determination. It is true, Scorpio's can be argumentative and pack a powerful sting, but that's simply because they see all opposition as a healthy challenge. </p><br />
+                            <a>♐ Sagittarius - November 23 - December 22</a><button id="archer">Get info</button><p id="saggitarius" hidden="hidden">Here we have the philosopher among the zodiac signs and meanings. Like the Scorpio, they have great ability for focus, and can be very intense. However, they must channel their energy or they will waste time and wear themselves out going in too many directions at once. They are not very patient and expect quick results. However, when encountered with failure they make extreme comeback's often against incredible odds. They make loyal friends and lovers, but they do not handle commitment well as they refuse to be tied down while chasing philosophical pursuits. </p><br />
+                            <!-- ending div with second section -->
+
+
+
+                        </div>
+                        </div>
+                       
+                        <div class="group">
+                            <h3 style="color:rgba(245, 83, 20, 1)"><a href="#" style="color:rgba(245, 83, 20, 1)">Find yours | Step 3</a></h3>
+                            <form name="bestform">
+                              <!--<script type="text/javascript">
+        function bestScript() {
+
+            var dropdownDate = document.getElementById("date")
+            var dropdownMonth = document.getElementById("month")
+            var sign = document.getElementById("sign")
+/*            var message1 = "Your Zodiac Sign is:";
+*/
+
+            if (dropdownMonth.selectedIndex == 1 && dropdownDate.selectedIndex <= 19) {
+                sign.value = message1 + " CAPRICORN";
+            }
+            if (dropdownMonth.selectedIndex == 1 && dropdownDate.selectedIndex >= 20) { sign.value = message1 + " AQUARIUS"; }
+            if (dropdownMonth.selectedIndex == 2 && dropdownDate.selectedIndex <= 18) { sign.value = message1 + " AQUARIUS"; }
+            if (dropdownMonth.selectedIndex == 2 && dropdownDate.selectedIndex >= 19) { sign.value = message1 + " PISCES"; }
+            if (dropdownMonth.selectedIndex == 3 && dropdownDate.selectedIndex <= 20) { sign.value = message1 + " PISCES"; }
+
+            if (dropdownMonth.selectedIndex == 3 && dropdownDate.selectedIndex >= 21) { sign.value = message1 + " ARIES"; }
+            if (dropdownMonth.selectedIndex == 4 && dropdownDate.selectedIndex <= 19) { sign.value = message1 + " ARIES"; }
+            if (dropdownMonth.selectedIndex == 4 && dropdownDate.selectedIndex >= 20) { sign.value = message1 + " TAURUS"; }
+            if (dropdownMonth.selectedIndex == 5 && dropdownDate.selectedIndex <= 20) { sign.value = message1 + " TAURUS"; }
+            if (dropdownMonth.selectedIndex == 5 && dropdownDate.selectedIndex >= 21) { sign.value = message1 + " GEMINI"; }
+            if (dropdownMonth.selectedIndex == 6 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " GEMINI"; }
+            if (dropdownMonth.selectedIndex == 6 && dropdownDate.selectedIndex >= 21) { sign.value = message1 + " CANCER"; }
+            if (dropdownMonth.selectedIndex == 7 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " CANCER"; }
+            if (dropdownMonth.selectedIndex == 7 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " LEO"; }
+            if (dropdownMonth.selectedIndex == 8 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " LEO"; }
+            if (dropdownMonth.selectedIndex == 8 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " VIRGO"; }
+            if (dropdownMonth.selectedIndex == 9 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " VIRGO"; }
+            if (dropdownMonth.selectedIndex == 9 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " LIBRA"; }
+            if (dropdownMonth.selectedIndex == 10 && dropdownDate.selectedIndex <= 22) { sign.value = message1 + " LIBRA"; }
+            if (dropdownMonth.selectedIndex == 10 && dropdownDate.selectedIndex >= 23) { sign.value = message1 + " SCORPIO"; }
+            if (dropdownMonth.selectedIndex == 11 && dropdownDate.selectedIndex <= 21) { sign.value = message1 + " SCORPIO"; }
+            if (dropdownMonth.selectedIndex == 11 && dropdownDate.selectedIndex >= 22) { sign.value = message1 + " SAGITTARIUS"; }
+            if (dropdownMonth.selectedIndex == 12 && dropdownDate.selectedIndex <= 21) { sign.value = message1 + " SAGITTARIUS"; }
+            if (dropdownMonth.selectedIndex == 12 && dropdownDate.selectedIndex >= 22) { sign.value = message1 + " CAPRICORN"; }
+        }
+
+        function addDays() {
+            var list = document.getElementById("month");
+            var div = document.getElementById("daysList");
+            var dateList = document.getElementById("date");
+            var days = 0;
+            switch (list.options[list.selectedIndex].text) {
+                case "January":
+                case "March":
+                case "May":
+                case "July":
+                case "August":
+                case "October":
+                case "December":
+                    days = 31;
+                    break;
+                case "February":
+                    days = 29;
+                    break;
+                case "April":
+                case "June":
+                case "September":
+                case "November":
+                    days = 30;
+                    break;
+            }
+            if (dateList.length > 0) {
+                for (var i = dateList.length; i >= dateList.length; i--) {
+                    dateList.remove(dateList.length - 1[i]);
+					
+
+                }
+
+            }
+            for (var i = 1; i <= days; i++) {
+                var li = document.createElement('option');
+                dateList.appendChild(li);
+                li.appendChild(document.createTextNode(i));
+            }
+            div.style.display = "inline";
+        }
+    </script>-->
+                                <h1 class="p">Zodiac Sign Finder</h1>
+                                <div class="space"></div>
+                                First&nbsp;Choose:&nbsp;<!--  select: -->
+                                <!--<div id="yolo"><a style="background-color:#18DC40">--><select id="month" name="month" onchange="addDays();" style="padding:9px;color:purple;border:1px solid #BDDEFF;border-radius:10px" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-all">
+                                    <option value="x" selected="">Your Month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select><!--</a>-->
+                                <!--</div>-->
+                                <div id="daysList" style="display:none">
+                                    &amp;&nbsp;Then&nbsp;Choose&nbsp;Your&nbsp;Day:
+                                    <select id="date" class="ui-selectmenu-button ui-widget ui-state-default ui-corner-all" style="padding:9px;"></select><span id="sltinfo"></span>
+                                    Then&nbsp;
+                                    <input id="button" onclick="bestScript()" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" value="Find Your Zodiac Sign!" style="color:hotpink" />
+                                    <input id="sign" class="common" style=" color: black; font-weight: bold;border: 1px solid white;font-family:verdana; font-size: 20px;text-wrap:unrestricted;" size="130" value="" type="text" contenteditable="false" />
+                                    <br />
+                                    <!-- ending days list div -->
+                                </div>
+                            </form>
+                            <!-- div ending 3rd section group -->
+                        </div><div class="group"><h3 style="color: rgb(0, 132, 201)"><a href="#" style="color: rgb(0, 132, 201);">Read about Birthstones | Step 4</a></h3>
+<div>
+<!--content goes here-->
+<div id="content"><div class="bar"><div class="no-right" id="content-inside"><div class="focus-areas" id="birthstones">
+            <dl class="jan">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/january-birthstone">January</a></dt>
+                <dd>Garnet</dd>
+            </dl>
+            <dl class="feb">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/february-birthstones">February</a></dt>
+                <dd>Amethyst</dd>
+            </dl>
+            <dl class="mar">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/march-birthstones">March</a></dt>
+                <dd>Aquamarine</dd>
+            </dl>
+            <dl class="apr">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/april-birthstone">April</a></dt>
+                <dd>Diamond</dd>
+            </dl>
+            <dl class="may">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/may-birthstone">May</a></dt>
+                <dd>Emerald</dd>
+            </dl>
+            <dl class="jun">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/june-birthstones">June</a></dt>
+                <dd>Pearl</dd>
+                <dd>Alexandrite</dd>
+            </dl>
+            <dl class="jul">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/july-birthstone">July</a></dt>
+                <dd>Ruby</dd>
+            </dl>
+            <dl class="aug">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/august-birthstones">August</a></dt>
+                <dd>Peridot</dd>
+            </dl>
+            <dl class="sep">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/september-birthstone">September</a></dt>
+                <dd>Sapphire</dd>
+            </dl>
+            <dl class="oct">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/october-birthstones">October</a></dt>
+                <dd>Tourmaline</dd>
+                <dd>Opal</dd>
+            </dl>
+            <dl class="nov">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/november-birthstones">November</a></dt>
+                <dd>Topaz</dd>
+                <dd>Citrine</dd>
+            </dl>
+            <dl class="dec">
+                <dt><a onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;" href="http://www.americangemsociety.org/december-birthstones">December</a></dt>
+                <dd>Tanzanite</dd>
+                <dd>Zircon</dd>
+                <dd>Turquoise</dd>
+            </dl>
+        </div></div></div></div>
+</div>
+</div>
+
+                        <div class="group"><h3 style="color:rgba(124, 186, 0, 1)"><a href="#" style="color:rgba(124, 186, 0, 1)">Birthstone Finder | Step 5</a></h3>
+                                                                    <div id="bstone">
+                                <select id="month2" style="width:300px">
+                                    <option value="">Select a month</option>
+                                    <option value="1">January</option>
+                                    <option value="2">February</option>
+                                    <option value="3">March</option>
+                                    <option value="4">April</option>
+                                    <option value="5">May</option>
+                                    <option value="6">June</option>
+                                    <option value="7">July</option>
+                                    <option value="8">August</option>
+                                    <option value="9">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                
+                                <button onclick="userGemstone()" style='font-size: 20px;'>Find Birthstone!</button>
+    <!-- ending bstone div -->                          <p id="gemstone" class="p"></p> <p>
+</div>
+</div>
+ <div class="group">
+                        <h3><a href="#" style="color:#e9005a">Read About it - Planet Symbol's | Step 6</a></h3>
+                        
+                                <div>   
+                                <script>
+                                $(document).ready(function() {
+  // Handler for .ready() called.
+
+$(function () {
+$("#mercurys").click(function () {
+$("#p1").toggle("puff", 1000);
+});
+});
+$(function() {
+$("#venuss").click(function () {
+$("#p2").toggle("puff", 1000);
+});
+});
+$(function() {
+$("#earths").click(function () {
+$("#p3").toggle( "puff", 1000 );
+});
+});
+$(function() {
+$("#marss").click(function () {
+$("#p4").toggle("puff", 1000);
+});
+});
+$(function() {
+$("#jupiters").click(function () {
+$("#p5").toggle("puff", 1000);
+});
+});
+$(function() {
+$("#saturns").click(function () {
+$("#p6").toggle("puff", 1000);
+});
+});
+$(function() {
+$("#neptunes").click(function () {
+$("#p7").toggle("highlight", 1000);
+});
+});
+$(function() {
+$("#uranuss").click(function () {
+$("#p8").toggle("puff", 1000);
+});
+});
+$(function() {
+$("#plutos").click(function () {
+$("#p9").toggle("puff", 1000);
+});
+});
+});
+
+</script>
+                                I just put the planet symbols in step 1 for fun, here are the meanings of the planet symbols; just for fun facts. 
+                                    Planet Symbols | Definitions &amp; Meanings:&nbsp;<br /><var>*These buttons are toggleable</var><br />
+
+                                <a id="mercurys" class="bigFont">&#9791;</a><div id="p1" hidden="hidden">This Symbol is of the Planet:&nbsp;<a id="mercuryp" href="http://en.wikipedia.org/wiki/Mercury_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Mercury</a>&nbsp;&amp;&nbsp;This Planet's god is:&nbsp;<a id="mercuryg" href="http://en.wikipedia.org/wiki/Hermes" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Hermes</a></div><br /><br />
+                                    <a id="venuss" class="bigFont">&#9792;</a><div id="p2" hidden="hidden">
+                                This Symbol is of the Planet:&nbsp;<a id="venusp" href="http://en.wikipedia.org/wiki/Venus_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Venus</a>&nbsp;&amp;&nbsp;This Planet's godess is:&nbsp;<a id="superalign" href="http://en.wikipedia.org/wiki/Aphrodite" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Aphrodite</a>
+                                    </div><br /><br />
+                                    <a id="earths" class="bigFont">&#9793;/&oplus;</a><div id="p3" hidden="hidden">This Symbol is of the Planet:&nbsp;
+                                <a class="earthp" href="http://en.wikipedia.org/wiki/Gaia_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Earth</a>&nbsp;&amp;&nbsp;This Planet's godess is:&nbsp;<a id="earthg" href="http://en.wikipedia.org/wiki/Gaia_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Gaia</a></div>
+                                <br /><br />
+                                    <a id="marss" class="bigFont">
+                                    &#9794;</a><div id="p4" hidden="hidden">This Symbol is of the Planet:&nbsp;
+                                <a class="4p" href="http://en.wikipedia.org/wiki/Mars_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Mars</a>&nbsp;&amp;&nbsp;This Planet's god is:&nbsp;<a id="superalign" href="http://en.wikipedia.org/wiki/Ares" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Ares</a><br />
+                                    </div>
+                                <br /><br />
+                                    <a id="jupiters" class="bigFont">&#9795;</a><div id="p5" hidden="hidden">This Symbol is of the Planet:&nbsp;
+                                <a href="http://en.wikipedia.org/wiki/Jupiter_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Jupiter</a>&nbsp;&amp;&nbsp;This Planet's god is:&nbsp;<a id="superalign" href="http://en.wikipedia.org/wiki/Zues" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Zues</a></div>
+                                <br /><br />
+                                <a class="bigFont" id="saturns">
+                                    &#9796;</a><div id="p6" hidden="hidden">This Symbol is of the Planet:&nbsp;
+                                <a href="http://en.wikipedia.org/wiki/Saturn_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Saturn</a>&nbsp;&amp;&nbsp;This Planet's god is:&nbsp;<a id="superalign" href="http://en.wikipedia.org/wiki/Kronos" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Kronos</a></div>
+                                <br /><br />
+                                    <a class="bigFont" id="neptunes">
+                                    &#9797;</a> <div id="p7" hidden="hidden">This Symbol is of the Planet:&nbsp;
+                                <a href="http://en.wikipedia.org/wiki/Neptune_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Neptune</a>&nbsp;&amp;&nbsp;This Planet's god is:&nbsp;<a id="superalign" href="http://en.wikipedia.org/wiki/Poseidon" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Poseidon</a>
+                                </div>
+                                <br /><br />
+                                <a class="bigFont" id="uranuss">
+                                    &#9798;</a><div id="p8" hidden="hidden">
+                                This Symbol is of the Planet:&nbsp;<a href="http://en.wikipedia.org/wiki/Uranus_(mythology)" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Uranus</a>&nbsp;&amp;&nbsp;This Planet's god is:&nbsp;<a id="superalign" href="http://en.wikipedia.org/wiki/Ouranos" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">Ouranos(Caelus)</a></div>
+                                <br /><br />
+                                    <a id="plutos" class="bigFont">&#9799;</a><div id="p9" hidden="hidden"><a href="http://en.wikipedia.org/wiki/Pluto_(mythology)">Pluto</a>This Symbol is of the Planet:&nbsp;<a id="superalign" href="http://en.wikipedia.org/wiki/Hades" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">&nbsp;&amp;&nbsp;This Planet's god is:&nbsp;Hades</a></div><br />
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                            <div id="tabs-2">
+                <p>By: Brock Glatman, <!--Son of Wendy Glatman, aka Made By Brock who needs to go to bed--></p>
+<div id="feedback-all" style="font-weight:bold"><h3>Did you like this, or did you hate it? Or Do you not know (IDK)?</h3>
+<button onclick="document.getElementById('userFeedback').innerText = 'Awesome ! :) Thank you so much! :)'">I loved this :)</button> or 
+<button onclick="document.getElementById('userFeedback').innerText = 'Sorry :( Im am very sorry, i apologise if you thought this web app was horrible'">I hated this :(</button>
+ or <button  onclick="document.getElementById('userFeedback').innerText = 'Ok, :| thank you for using my web app thought :)'">IDK :|</button>
+ or: <h3>Other:</h3>
+ <textarea placeholder="any other feedback...." style="width:500px;height:500px;">
+ EXAMPLES:
+ I didnt know what this web page/web app was for!? 
+ or,
+ This web app was stupid and unprofessional 
+ or,
+ this web app was very professional
+  
+ I like this web app, but i dont love it
+  
+ or, 
+ I dont like this web app, but i dont hate it
+  or, 
+ i didnt have enough time to use this web app,
+  or, 
+ this web app is cluttered and not neat
+  or, 
+ this web app was very clean and neat
+  ETC... 
+ </textarea>
+ <br />
+OR:
+<br />
+<script>
+$(function () {
+$("#GetTheCodeBtn").click(function (){
+$("#GetTheCode").toggle();
+});
+});
+</script>
+<button id="GetTheCodeBtn" onclick="document.getElementById('GetTheCode').innerText = 'Instructions:\nTo get he code, use the following keyboard shortcuts:\n For: Internet Explorer, Firefox, Google Chrome, &amp; Opera: \'Control + U\', &amp; For Safari (on a Mac): \'Command + Option + U\'. \n Inspect Element for Chrome, Opera, Internet Explorer, &amp; Firefox: F12, Safari Does not have an \'Inspec Element\' Option, only a \'View Source\' option.'">Get The Code</button>
+<p id="GetTheCode" style="font-family:'Segoe UI';"></p>
+<p id="userFeedback"></p><br />
+<button onclick="document.getElementById('userFeedback').innerText = ''">Reset feedback data</button>
+<br />
+<button onclick="document.getElementById('thanksForFeedback').innerText = 'Thank you for your feedback! :)';document.getElementById('feedback-all').style.display = 'none'">Submit your feedback</button></div><h1 id="thanksForFeedback"></h1>
+</div>
+</div></div>
+        <script>
+            $(function() {
+                $( "#tabs" ).tabs();
+            });
+              $(function() {
+               $( "#tabs" ).tabs({
+                 collapsible: true,
+                            placeholder: "ui-state-hightlight"
+               });          
+             });        
+             $(function() {     
+               var tabs = $( "#tabs" ).tabs();          
+               tabs.find( ".ui-tabs-nav" ).sortable({           
+                 axis: "x, y, z",           
+                 stop: function() {     
+                   tabs.tabs( "refresh" );      
+                 }      
+               });      
+             });
+        </script> 
+<!--<br /><br />
+ 
+<a href="http://go.microsoft.com/fwlink/?LinkID=394657" target="_blank">Getting started</a>
+-->
+</body>
+</html>
+
+
